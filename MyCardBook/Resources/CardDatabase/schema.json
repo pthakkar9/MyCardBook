@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MyCardBook Card Database Schema",
+  "description": "JSON schema for validating MyCardBook card database files",
+  "type": "object",
+  "required": ["version", "lastUpdated", "cards"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the database"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Last update date in YYYY-MM-DD format"
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/card"
+      },
+      "description": "Array of credit card definitions"
+    }
+  },
+  "$defs": {
+    "card": {
+      "type": "object",
+      "required": ["id", "cardType", "issuer", "network", "variant", "category", "annualFee", "credits"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique identifier for the card (lowercase, alphanumeric, dashes only)"
+        },
+        "cardType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Full name of the credit card"
+        },
+        "issuer": {
+          "type": "string",
+          "enum": ["American Express", "Chase", "Citi", "Capital One", "Bank of America", "Wells Fargo", "Discover", "US Bank", "Barclays", "Other"],
+          "description": "Card issuing bank"
+        },
+        "network": {
+          "type": "string",
+          "enum": ["Amex", "Visa", "Mastercard", "Discover"],
+          "description": "Payment network"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["Personal", "Business"],
+          "description": "Card variant type"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Cash Back", "Travel Rewards", "Premium Travel", "Business Rewards", "No Annual Fee", "Other"],
+          "description": "Card category"
+        },
+        "annualFee": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Annual fee in USD"
+        },
+        "credits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/credit"
+          },
+          "description": "Array of credit benefits for this card"
+        }
+      }
+    },
+    "credit": {
+      "type": "object",
+      "required": ["id", "name", "amount", "currency", "category", "frequency"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique identifier for the credit (lowercase, alphanumeric, dashes only)"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display name of the credit"
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Credit amount"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD"],
+          "default": "USD",
+          "description": "Currency code (USD only for now)"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Dining", "Travel", "Transportation", "Entertainment", "Shopping", "Wellness", "Other"],
+          "description": "Credit category"
+        },
+        "frequency": {
+          "type": "string",
+          "enum": ["Monthly", "Quarterly", "Annual"],
+          "description": "Credit renewal frequency"
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional description of the credit"
+        },
+        "terms": {
+          "type": "string",
+          "description": "Optional terms and conditions"
+        }
+      }
+    }
+  }
+}

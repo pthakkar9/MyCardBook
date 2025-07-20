@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788.4" systemVersion="24F74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CardEntity" representedClassName="CardEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="addedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="cardType" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="issuer" optional="YES" attributeType="String"/>
+        <attribute name="network" optional="YES" attributeType="String"/>
+        <attribute name="nickname" optional="YES" attributeType="String"/>
+        <attribute name="variant" optional="YES" attributeType="String"/>
+        <relationship name="credits" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CreditEntity" inverseName="card" inverseEntity="CreditEntity"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="cards" inverseEntity="UserEntity"/>
+    </entity>
+    <entity name="CreditEntity" representedClassName="CreditEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="creditDescription" optional="YES" attributeType="String"/>
+        <attribute name="currency" optional="YES" attributeType="String"/>
+        <attribute name="expirationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="frequency" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isUsed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="renewalDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="terms" optional="YES" attributeType="String"/>
+        <attribute name="usedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="credits" inverseEntity="CardEntity"/>
+    </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCloudSyncEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lastLoginAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="passwordHash" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CardEntity" inverseName="user" inverseEntity="CardEntity"/>
+    </entity>
+</model>

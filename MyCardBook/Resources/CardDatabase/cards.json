@@ -1,0 +1,516 @@
+{
+  "version": "1.1.0",
+  "lastUpdated": "2025-01-19",
+  "cards": [
+    {
+      "id": "amex-personal-gold",
+      "cardType": "American Express Personal Gold Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Personal",
+      "category": "Travel Rewards",
+      "annualFee": 250,
+      "credits": [
+        {
+          "id": "amex-gold-dining",
+          "name": "Dining Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Monthly",
+          "description": "Monthly dining credit for eligible purchases",
+          "terms": "Credit applied automatically to eligible dining purchases"
+        },
+        {
+          "id": "amex-gold-uber",
+          "name": "Uber Credit",
+          "amount": 15.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly Uber credit for rides and Uber Eats",
+          "terms": "Credit applied to Uber account monthly"
+        },
+        {
+          "id": "amex-gold-equinox",
+          "name": "Equinox Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Wellness",
+          "frequency": "Annual",
+          "description": "Annual Equinox+ digital fitness credit",
+          "terms": "Credit for Equinox+ digital membership"
+        }
+      ]
+    },
+    {
+      "id": "amex-personal-platinum",
+      "cardType": "American Express Personal Platinum Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Personal",
+      "category": "Premium Travel",
+      "annualFee": 695,
+      "credits": [
+        {
+          "id": "amex-plat-airline",
+          "name": "Airline Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual airline fee credit",
+          "terms": "Credit for eligible airline incidental fees"
+        },
+        {
+          "id": "amex-plat-uber",
+          "name": "Uber Credit",
+          "amount": 15.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly Uber credit ($35 in December)",
+          "terms": "Credit applied to Uber account monthly"
+        },
+        {
+          "id": "amex-plat-saks",
+          "name": "Saks Fifth Avenue Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Shopping",
+          "frequency": "Monthly",
+          "description": "Semiannual Saks credit (Jan-Jun, Jul-Dec)",
+          "terms": "Credit for Saks Fifth Avenue purchases"
+        },
+        {
+          "id": "amex-plat-entertainment",
+          "name": "Entertainment Credit",
+          "amount": 20.0,
+          "currency": "USD",
+          "category": "Entertainment",
+          "frequency": "Monthly",
+          "description": "Monthly entertainment credit",
+          "terms": "Credit for streaming and digital entertainment"
+        },
+        {
+          "id": "amex-plat-equinox",
+          "name": "Equinox Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Wellness",
+          "frequency": "Annual",
+          "description": "Annual Equinox+ digital fitness credit",
+          "terms": "Credit for Equinox+ digital membership"
+        },
+        {
+          "id": "amex-plat-walmart",
+          "name": "Walmart+ Credit",
+          "amount": 12.95,
+          "currency": "USD",
+          "category": "Shopping",
+          "frequency": "Monthly",
+          "description": "Monthly Walmart+ membership credit",
+          "terms": "Credit for Walmart+ monthly membership"
+        }
+      ]
+    },
+    {
+      "id": "amex-business-gold",
+      "cardType": "American Express Business Gold Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Business",
+      "category": "Business Rewards",
+      "annualFee": 295,
+      "credits": [
+        {
+          "id": "amex-biz-gold-dining",
+          "name": "Dining Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Monthly",
+          "description": "Monthly dining credit for eligible purchases",
+          "terms": "Credit applied automatically to eligible dining purchases"
+        },
+        {
+          "id": "amex-biz-gold-wireless",
+          "name": "Wireless Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Other",
+          "frequency": "Monthly",
+          "description": "Monthly wireless credit for eligible purchases",
+          "terms": "Credit applied to eligible wireless service purchases"
+        }
+      ]
+    },
+    {
+      "id": "amex-business-platinum",
+      "cardType": "American Express Business Platinum Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Business",
+      "category": "Premium Travel",
+      "annualFee": 695,
+      "credits": [
+        {
+          "id": "amex-biz-plat-airline",
+          "name": "Airline Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual airline fee credit",
+          "terms": "Credit for eligible airline incidental fees"
+        },
+        {
+          "id": "amex-biz-plat-dell",
+          "name": "Dell Credit",
+          "amount": 400.0,
+          "currency": "USD",
+          "category": "Other",
+          "frequency": "Annual",
+          "description": "Annual Dell Technologies credit",
+          "terms": "Credit for Dell business purchases"
+        },
+        {
+          "id": "amex-biz-plat-adobe",
+          "name": "Adobe Credit",
+          "amount": 150.0,
+          "currency": "USD",
+          "category": "Other",
+          "frequency": "Annual",
+          "description": "Annual Adobe Creative Cloud credit",
+          "terms": "Credit for Adobe Creative Cloud subscriptions"
+        },
+        {
+          "id": "amex-biz-plat-indeed",
+          "name": "Indeed Credit",
+          "amount": 360.0,
+          "currency": "USD",
+          "category": "Other",
+          "frequency": "Annual",
+          "description": "Annual Indeed job posting credit",
+          "terms": "Credit for Indeed job postings"
+        }
+      ]
+    },
+    {
+      "id": "chase-sapphire-preferred",
+      "cardType": "Chase Sapphire Preferred",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Travel Rewards",
+      "annualFee": 95,
+      "credits": [
+        {
+          "id": "csp-travel-credit",
+          "name": "Annual Travel Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual travel credit for eligible purchases",
+          "terms": "Credit applied to eligible travel purchases annually"
+        },
+        {
+          "id": "csp-grocery-credit",
+          "name": "Grocery Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Shopping",
+          "frequency": "Annual",
+          "description": "Annual grocery credit",
+          "terms": "Credit for eligible grocery purchases"
+        }
+      ]
+    },
+    {
+      "id": "chase-sapphire-reserve",
+      "cardType": "Chase Sapphire Reserve",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Premium Travel",
+      "annualFee": 550,
+      "credits": [
+        {
+          "id": "csr-travel-credit",
+          "name": "Annual Travel Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual travel credit for eligible purchases",
+          "terms": "Credit applied to eligible travel purchases annually"
+        },
+        {
+          "id": "csr-dashpass",
+          "name": "DashPass Credit",
+          "amount": 12.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Monthly",
+          "description": "Monthly DashPass credit for food delivery",
+          "terms": "Credit applied to DashPass subscription monthly"
+        },
+        {
+          "id": "csr-lyft-pink",
+          "name": "Lyft Pink Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Annual",
+          "description": "Annual Lyft Pink membership credit",
+          "terms": "Credit for Lyft Pink membership"
+        },
+        {
+          "id": "csr-peloton",
+          "name": "Peloton Credit",
+          "amount": 60.0,
+          "currency": "USD",
+          "category": "Wellness",
+          "frequency": "Annual",
+          "description": "Annual Peloton Digital membership credit",
+          "terms": "Credit for Peloton Digital subscription"
+        }
+      ]
+    },
+    {
+      "id": "chase-united-explorer",
+      "cardType": "Chase United Explorer Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Travel Rewards",
+      "annualFee": 95,
+      "credits": [
+        {
+          "id": "united-explorer-baggage",
+          "name": "Free Checked Bag",
+          "amount": 35.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Free first checked bag for primary cardmember and companion",
+          "terms": "Valid on United-operated flights"
+        },
+        {
+          "id": "united-explorer-credit",
+          "name": "United Travel Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual United travel credit",
+          "terms": "Credit for United purchases"
+        }
+      ]
+    },
+    {
+      "id": "chase-united-club-infinite",
+      "cardType": "Chase United Club Infinite Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Premium Travel",
+      "annualFee": 525,
+      "credits": [
+        {
+          "id": "united-infinite-credit",
+          "name": "United Travel Credit",
+          "amount": 325.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual United travel credit",
+          "terms": "Credit for United purchases"
+        },
+        {
+          "id": "united-infinite-global-entry",
+          "name": "Global Entry Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Global Entry/TSA PreCheck credit",
+          "terms": "Credit for Global Entry or TSA PreCheck application fee"
+        }
+      ]
+    },
+    {
+      "id": "citi-double-cash",
+      "cardType": "Citi Double Cash",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "capital-one-venture-x",
+      "cardType": "Capital One Venture X",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Travel Rewards",
+      "annualFee": 395,
+      "credits": [
+        {
+          "id": "venture-x-travel-credit",
+          "name": "Annual Travel Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual travel credit for booking through Capital One Travel",
+          "terms": "Credit for bookings through Capital One Travel portal"
+        },
+        {
+          "id": "venture-x-global-entry",
+          "name": "Global Entry Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Global Entry/TSA PreCheck credit",
+          "terms": "Credit for Global Entry or TSA PreCheck application fee every 4 years"
+        }
+      ]
+    },
+    {
+      "id": "capital-one-savor",
+      "cardType": "Capital One Savor Cash Rewards",
+      "issuer": "Capital One",
+      "network": "Mastercard",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 95,
+      "credits": []
+    },
+    {
+      "id": "chase-freedom-unlimited",
+      "cardType": "Chase Freedom Unlimited",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "chase-freedom-flex",
+      "cardType": "Chase Freedom Flex",
+      "issuer": "Chase",
+      "network": "Mastercard",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "citi-premier",
+      "cardType": "Citi Premier Card",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "variant": "Personal",
+      "category": "Travel Rewards",
+      "annualFee": 95,
+      "credits": [
+        {
+          "id": "citi-premier-hotel",
+          "name": "Hotel Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual hotel credit for eligible bookings",
+          "terms": "Credit for hotel stays booked through Citi Travel"
+        }
+      ]
+    },
+    {
+      "id": "discover-it-cash-back",
+      "cardType": "Discover it Cash Back",
+      "issuer": "Discover",
+      "network": "Discover",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "wells-fargo-active-cash",
+      "cardType": "Wells Fargo Active Cash Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "bank-of-america-travel-rewards",
+      "cardType": "Bank of America Travel Rewards",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "variant": "Personal",
+      "category": "Travel Rewards",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "amex-blue-cash-preferred",
+      "cardType": "American Express Blue Cash Preferred",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 95,
+      "credits": []
+    },
+    {
+      "id": "amex-blue-cash-everyday",
+      "cardType": "American Express Blue Cash Everyday",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Personal",
+      "category": "Cash Back",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "chase-ink-business-preferred",
+      "cardType": "Chase Ink Business Preferred",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Business",
+      "category": "Business Rewards",
+      "annualFee": 95,
+      "credits": []
+    },
+    {
+      "id": "chase-ink-business-cash",
+      "cardType": "Chase Ink Business Cash",
+      "issuer": "Chase",
+      "network": "Visa",
+      "variant": "Business",
+      "category": "Business Rewards",
+      "annualFee": 0,
+      "credits": []
+    },
+    {
+      "id": "capital-one-spark-cash",
+      "cardType": "Capital One Spark Cash for Business",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "variant": "Business",
+      "category": "Business Rewards",
+      "annualFee": 0,
+      "credits": []
+    }
+  ]
+}
