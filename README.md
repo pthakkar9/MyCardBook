@@ -2,7 +2,7 @@
 
 **Privacy-first iOS app for tracking credit card benefits**
 
-[![App Store](https://img.shields.io/badge/App%20Store-Download-blue)](https://apps.apple.com/app/mycardbook)
+[![App Store](https://img.shields.io/badge/App%20Store-Download-blue)](https://apps.apple.com/app/mycardbook-pro/id6748933843)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/platform-iOS%2016.0+-lightgrey)](https://developer.apple.com/ios/)
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange)](https://swift.org)
@@ -37,12 +37,12 @@
 
 | Dashboard | Cards | Credits | Add Card |
 |-----------|--------|---------|----------|
-| ![Dashboard](screenshots/dashboard.png) | ![Cards](screenshots/cards.png) | ![Credits](screenshots/credits.png) | ![Add](screenshots/add-card.png) |
+| ![Dashboard](screenshots/dashboard.png) | ![Cards](screenshots/cards.png) | ![Credits](screenshots/credits.png) | ![Add](screenshots/add-card.png) | ![Export](screenshots/export-data.png) | ![About](screenshots/open-source.png)
 
 ## 🚀 Getting Started
 
 ### Download
-[![Download on the App Store](https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83)](https://apps.apple.com/app/mycardbook)
+[![Download on the App Store](https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83)](https://apps.apple.com/app/mycardbook-pro/id6748933843)
 
 ### First Steps
 1. **Download** MyCardBook from the App Store
