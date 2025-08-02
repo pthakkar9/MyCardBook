@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "lastUpdated": "2025-01-19",
+  "version": "1.2.0",
+  "lastUpdated": "2025-08-01",
   "cards": [
     {
       "id": "amex-personal-gold",
@@ -8,8 +8,9 @@
       "issuer": "American Express",
       "network": "Amex",
       "variant": "Personal",
-      "category": "Travel Rewards",
-      "annualFee": 250,
+      "category": "Dining & Grocery Rewards",
+      "annualFee": 375,
+      "color": "#D4AF37",
       "credits": [
         {
           "id": "amex-gold-dining",
@@ -18,28 +19,48 @@
           "currency": "USD",
           "category": "Dining",
           "frequency": "Monthly",
-          "description": "Monthly dining credit for eligible purchases",
-          "terms": "Credit applied automatically to eligible dining purchases"
+          "description": "Statement credits at Grubhub, The Cheesecake Factory, Goldbelly, Wine.com, and Five Guys",
+          "terms": "Up to $10 per month. Enrollment required."
         },
         {
           "id": "amex-gold-uber",
           "name": "Uber Credit",
-          "amount": 15.0,
+          "amount": 10.0,
           "currency": "USD",
           "category": "Transportation",
           "frequency": "Monthly",
-          "description": "Monthly Uber credit for rides and Uber Eats",
-          "terms": "Credit applied to Uber account monthly"
+          "description": "Uber Cash for rides and Uber Eats orders in the US",
+          "terms": "Up to $10 per month. Must add card to Uber app. Valid in US only."
         },
         {
-          "id": "amex-gold-equinox",
-          "name": "Equinox Credit",
-          "amount": 300.0,
+          "id": "amex-gold-resy-credit",
+          "name": "Resy Credit",
+          "amount": 50.0,
           "currency": "USD",
-          "category": "Wellness",
+          "category": "Dining",
+          "frequency": "Semi-annual",
+          "description": "Credit for in-person dining at U.S. Resy restaurants",
+          "terms": "Up to $50 semi-annually. Enrollment required."
+        },
+        {
+          "id": "amex-gold-dunkin-credit",
+          "name": "Dunkin' Credit",
+          "amount": 7.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Monthly",
+          "description": "Statement credits for Dunkin' purchases",
+          "terms": "Up to $7 per month. Enrollment required."
+        },
+        {
+          "id": "amex-gold-hotel-collection",
+          "name": "The Hotel Collection Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual Equinox+ digital fitness credit",
-          "terms": "Credit for Equinox+ digital membership"
+          "description": "Experience credit for qualifying charges on stays of two consecutive nights or more booked via Amex Travel.",
+          "terms": "Up to $100 annually. Enrollment required."
         }
       ]
     },
@@ -51,6 +72,7 @@
       "variant": "Personal",
       "category": "Premium Travel",
       "annualFee": 695,
+      "color": "#C0C0C0",
       "credits": [
         {
           "id": "amex-plat-airline",
@@ -59,8 +81,18 @@
           "currency": "USD",
           "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual airline fee credit",
-          "terms": "Credit for eligible airline incidental fees"
+          "description": "Incidental fees with one selected qualifying airline",
+          "terms": "Must select airline in advance. Covers baggage fees, seat upgrades, etc."
+        },
+        {
+          "id": "amex-platinum-hotel-credit",
+          "name": "Hotel Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Credit for Fine Hotels + Resorts and The Hotel Collection bookings",
+          "terms": "Prepaid bookings via Amex Travel only. Hotel Collection requires 2-night minimum."
         },
         {
           "id": "amex-plat-uber",
@@ -69,8 +101,18 @@
           "currency": "USD",
           "category": "Transportation",
           "frequency": "Monthly",
-          "description": "Monthly Uber credit ($35 in December)",
-          "terms": "Credit applied to Uber account monthly"
+          "description": "Uber Cash for rides and Uber Eats orders in the US",
+          "terms": "$15 per month and $35 in December. Must add card to Uber app."
+        },
+        {
+          "id": "amex-platinum-clear-credit",
+          "name": "CLEAR Plus Credit",
+          "amount": 209.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Statement credit for CLEAR Plus membership",
+          "terms": "Subject to auto-renewal. Enrollment required."
         },
         {
           "id": "amex-plat-saks",
@@ -78,19 +120,19 @@
           "amount": 50.0,
           "currency": "USD",
           "category": "Shopping",
-          "frequency": "Monthly",
-          "description": "Semiannual Saks credit (Jan-Jun, Jul-Dec)",
-          "terms": "Credit for Saks Fifth Avenue purchases"
+          "frequency": "Semi-annual",
+          "description": "Statement credits for Saks purchases",
+          "terms": "Up to $50 semi-annually. $300 minimum order for free shipping."
         },
         {
           "id": "amex-plat-entertainment",
-          "name": "Entertainment Credit",
+          "name": "Digital Entertainment Credit",
           "amount": 20.0,
           "currency": "USD",
           "category": "Entertainment",
           "frequency": "Monthly",
-          "description": "Monthly entertainment credit",
-          "terms": "Credit for streaming and digital entertainment"
+          "description": "Credits for Disney+, Hulu, ESPN+, Peacock, NYT, WSJ subscriptions",
+          "terms": "Up to $20 per month. Enrollment required."
         },
         {
           "id": "amex-plat-equinox",
@@ -99,8 +141,8 @@
           "currency": "USD",
           "category": "Wellness",
           "frequency": "Annual",
-          "description": "Annual Equinox+ digital fitness credit",
-          "terms": "Credit for Equinox+ digital membership"
+          "description": "Credit for Equinox or Equinox+ membership",
+          "terms": "Subject to auto-renewal. Enrollment required."
         },
         {
           "id": "amex-plat-walmart",
@@ -110,7 +152,17 @@
           "category": "Shopping",
           "frequency": "Monthly",
           "description": "Monthly Walmart+ membership credit",
-          "terms": "Credit for Walmart+ monthly membership"
+          "terms": "Up to $12.95 per month plus applicable taxes. Subject to auto-renewal. Plus Ups not eligible."
+        },
+        {
+          "id": "amex-plat-tsa-global-entry",
+          "name": "TSA PreCheck/Global Entry Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 years",
+          "description": "Global Entry/TSA PreCheck credit",
+          "terms": "Credit for Global Entry or TSA PreCheck application fee"
         }
       ]
     },
@@ -121,27 +173,38 @@
       "network": "Amex",
       "variant": "Business",
       "category": "Business Rewards",
-      "annualFee": 295,
+      "annualFee": 375,
+      "color": "#D4AF37",
       "credits": [
         {
-          "id": "amex-biz-gold-dining",
-          "name": "Dining Credit",
-          "amount": 10.0,
+          "id": "amex-biz-gold-flexible-credit",
+          "name": "Flexible Business Credit",
+          "amount": 20.0,
           "currency": "USD",
-          "category": "Dining",
+          "category": "Business",
           "frequency": "Monthly",
-          "description": "Monthly dining credit for eligible purchases",
-          "terms": "Credit applied automatically to eligible dining purchases"
+          "description": "Credits for U.S. purchases at FedEx, Grubhub, and Office Supply Stores",
+          "terms": "Up to $20 per month. Enrollment required."
         },
         {
-          "id": "amex-biz-gold-wireless",
-          "name": "Wireless Credit",
-          "amount": 10.0,
+          "id": "amex-biz-gold-walmart-credit",
+          "name": "Walmart+ Credit",
+          "amount": 12.95,
           "currency": "USD",
-          "category": "Other",
+          "category": "Shopping",
           "frequency": "Monthly",
-          "description": "Monthly wireless credit for eligible purchases",
-          "terms": "Credit applied to eligible wireless service purchases"
+          "description": "Monthly Walmart+ membership credit",
+          "terms": "Up to $12.95 per month plus applicable taxes. Subject to auto-renewal. Plus Ups not eligible."
+        },
+        {
+          "id": "amex-biz-gold-hotel-credit",
+          "name": "Hotel Collection Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Experience credit for Hotel Collection bookings",
+          "terms": "Minimum 2-night stay through Amex Travel. Credit varies by property."
         }
       ]
     },
@@ -153,46 +216,88 @@
       "variant": "Business",
       "category": "Premium Travel",
       "annualFee": 695,
+      "color": "#C0C0C0",
       "credits": [
         {
-          "id": "amex-biz-plat-airline",
-          "name": "Airline Credit",
+          "id": "amex-biz-platinum-airline-credit",
+          "name": "Airline Fee Credit",
           "amount": 200.0,
           "currency": "USD",
           "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual airline fee credit",
-          "terms": "Credit for eligible airline incidental fees"
+          "description": "Incidental fees with one selected qualifying airline",
+          "terms": "Must select airline in advance. Covers baggage fees, seat upgrades, etc."
         },
         {
-          "id": "amex-biz-plat-dell",
-          "name": "Dell Credit",
-          "amount": 400.0,
-          "currency": "USD",
-          "category": "Other",
-          "frequency": "Annual",
-          "description": "Annual Dell Technologies credit",
-          "terms": "Credit for Dell business purchases"
-        },
-        {
-          "id": "amex-biz-plat-adobe",
-          "name": "Adobe Credit",
+          "id": "amex-biz-platinum-dell-credit",
+          "name": "Dell Technologies Credit",
           "amount": 150.0,
           "currency": "USD",
-          "category": "Other",
+          "category": "Technology",
           "frequency": "Annual",
-          "description": "Annual Adobe Creative Cloud credit",
-          "terms": "Credit for Adobe Creative Cloud subscriptions"
+          "description": "Statement credits for Dell purchases plus bonus after $5,000 spend",
+        "terms": "Up to $150 base credit + additional $1,000 after spending $5,000+ on Dell purchases per calendar year."
+      
         },
         {
-          "id": "amex-biz-plat-indeed",
+          "id": "amex-biz-platinum-indeed-credit",
           "name": "Indeed Credit",
-          "amount": 360.0,
+          "amount": 90.0,
           "currency": "USD",
-          "category": "Other",
+          "category": "Business",
+          "frequency": "Quarterly",
+          "description": "Statement credits for Indeed purchases",
+          "terms": "Up to $90 per quarter. Enrollment required."
+        },
+        {
+          "id": "amex-biz-platinum-clear-credit",
+          "name": "CLEAR Plus Credit",
+          "amount": 209.0,
+          "currency": "USD",
+          "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual Indeed job posting credit",
-          "terms": "Credit for Indeed job postings"
+          "description": "Statement credit for CLEAR Plus membership",
+          "terms": "Subject to auto-renewal. Enrollment required."
+        },
+        {
+          "id": "amex-biz-platinum-airline-credit",
+          "name": "Airline Fee Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Incidental fees with one selected qualifying airline",
+          "terms": "Must select airline in advance. Covers baggage fees, seat upgrades, etc."
+        },
+        {
+          "id": "amex-biz-platinum-hilton-credit",
+          "name": "Hilton Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Quarterly",
+          "description": "Statement credits for eligible Hilton property purchases",
+          "terms": "Must be enrolled in Hilton for Business program. Enrollment required."
+        },
+        {
+          "id": "amex-biz-platinum-wireless-credit",
+          "name": "U.S. Wireless Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Technology",
+          "frequency": "Monthly",
+          "description": "Credits for eligible wireless telephone services",
+          "terms": "Up to $10 per month. Enrollment required."
+        },
+        {
+          "id": "amex-biz-platinum-tsa-global-entry",
+          "name": "TSA PreCheck/Global Entry Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 years",
+          "description": "Global Entry/TSA PreCheck credit",
+          "terms": "Credit for Global Entry or TSA PreCheck application fee"
         }
       ]
     },
@@ -204,26 +309,119 @@
       "variant": "Personal",
       "category": "Travel Rewards",
       "annualFee": 95,
+      "color": "#000080",
       "credits": [
         {
-          "id": "csp-travel-credit",
-          "name": "Annual Travel Credit",
+          "id": "csp-hotel-credit",
+          "name": "Chase Travel Hotel Credit",
           "amount": 50.0,
           "currency": "USD",
           "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual travel credit for eligible purchases",
-          "terms": "Credit applied to eligible travel purchases annually"
+          "description": "Statement credits for hotel stays purchased through Chase Travel",
+          "terms": "Up to $50 annually for hotel stays on each account anniversary year through Chase Travel"
         },
         {
-          "id": "csp-grocery-credit",
-          "name": "Grocery Credit",
+          "id": "csp-dashpass-benefit",
+          "name": "DashPass Membership",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Annual",
+          "description": "Complimentary DashPass membership plus monthly promos",
+          "terms": "12 months complimentary DashPass ($120 value) plus $10 monthly promo for non-restaurant orders when activated by 12/31/27"
+        }
+      ]
+    },
+    {
+      "id": "chase-sapphire-reserve-business",
+      "cardType": "Chase Sapphire Reserve for Business",
+      "issuer": "Chase",
+      "network": "visa",
+      "variant": "Business",
+      "category": "Premium Business Travel",
+      "annualFee": 795,
+      "color": "#000080",
+      "credits": [
+        {
+          "id": "csrb-edit-credit",
+          "name": "The Edit Hotel Credit",
+          "amount": 250.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Semi-Annual",
+          "description": "Credit for The Edit collection hotels through Chase Travel",
+          "terms": "Up to $250 per six-month period ($500 annually) for prepaid bookings at The Edit hotels via Chase Travel. Two-night minimum."
+        },
+        {
+          "id": "csrb-travel-credit",
+          "name": "Annual Travel Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Flexible travel credit for any travel purchases",
+          "terms": "Up to $300 annually toward travel purchases. Most flexible travel credit available."
+        },
+        {
+          "id": "csrb-ziprecruiter-credit",
+          "name": "ZipRecruiter Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Business",
+          "frequency": "Semi-Annual",
+          "description": "Credits for ZipRecruiter hiring services",
+          "terms": "Up to $200 per six-month period ($400 annually) for purchases made directly with ZipRecruiter through 12/31/27"
+        },
+        {
+          "id": "csrb-google-workspace",
+          "name": "Google Workspace Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Business",
+          "frequency": "Annual",
+          "description": "Credit for Google Workspace AI tools for business",
+          "terms": "Up to $200 annually for purchases made directly with Google Workspace through 12/31/27"
+        },
+        {
+          "id": "csrb-doordash-promos",
+          "name": "DoorDash Monthly Promos",
+          "amount": 25.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Monthly",
+          "description": "Monthly DoorDash credits for restaurant and non-restaurant orders",
+          "terms": "Up to $25 monthly: $5 for restaurant orders and two $10 promos for groceries/retail orders through 12/31/27"
+        },
+        {
+          "id": "csrb-dashpass-benefit",
+          "name": "DashPass Membership",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Annual",
+          "description": "Complimentary DashPass membership",
+          "terms": "12 months complimentary DashPass ($120 value) when activated by 12/31/27"
+        },
+        {
+          "id": "csrb-lyft-credit",
+          "name": "Lyft Monthly Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly Lyft in-app credits",
+          "terms": "Up to $10 monthly in-app credits for Lyft rides through 9/30/27"
+        },
+        {
+          "id": "csrb-giftcards-credit",
+          "name": "Giftcards.com Credit",
           "amount": 50.0,
           "currency": "USD",
           "category": "Shopping",
-          "frequency": "Annual",
-          "description": "Annual grocery credit",
-          "terms": "Credit for eligible grocery purchases"
+          "frequency": "Semi-Annual",
+          "description": "Credits for gift card purchases",
+          "terms": "Up to $50 per six-month period ($100 annually) for gift cards from curated collection on giftcards.com/reservebusiness through 10/31/28"
         }
       ]
     },
@@ -234,8 +432,19 @@
       "network": "Visa",
       "variant": "Personal",
       "category": "Premium Travel",
-      "annualFee": 550,
+      "annualFee": 795,
+      "color": "#000080",
       "credits": [
+        {
+          "id": "csr-edit-credit",
+          "name": "The Edit Hotel Credit",
+          "amount": 250.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Semi-Annual",
+          "description": "Credit for The Edit collection hotels through Chase Travel",
+          "terms": "Up to $250 per six-month period ($500 annually) for prepaid bookings at The Edit hotels via Chase Travel. Two-night minimum."
+        },
         {
           "id": "csr-travel-credit",
           "name": "Annual Travel Credit",
@@ -243,274 +452,552 @@
           "currency": "USD",
           "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual travel credit for eligible purchases",
-          "terms": "Credit applied to eligible travel purchases annually"
+          "description": "Flexible travel credit for any travel purchases",
+          "terms": "Up to $300 annually toward travel purchases. Most flexible travel credit available."
         },
         {
-          "id": "csr-dashpass",
-          "name": "DashPass Credit",
-          "amount": 12.0,
+          "id": "csr-apple-services",
+          "name": "Apple TV+ and Apple Music",
+          "amount": 250.0,
+          "currency": "USD",
+          "category": "Entertainment",
+          "frequency": "Annual",
+          "description": "Complimentary Apple TV+ and Apple Music subscriptions",
+          "terms": "Complimentary subscriptions through June 22, 2027. Apple TV+ ($9.99/month) and Apple Music ($10.99/month) value."
+        },
+        {
+          "id": "csr-stubhub-credit",
+          "name": "StubHub and viagogo Credit",
+          "amount": 150.0,
+          "currency": "USD",
+          "category": "Entertainment",
+          "frequency": "Semi-Annual",
+          "description": "Credits for concert and event tickets",
+          "terms": "Up to $150 per six-month period ($300 annually) for StubHub and viagogo purchases"
+        },
+        {
+          "id": "csr-doordash-promos",
+          "name": "DoorDash Monthly Promos",
+          "amount": 25.0,
           "currency": "USD",
           "category": "Dining",
           "frequency": "Monthly",
-          "description": "Monthly DashPass credit for food delivery",
-          "terms": "Credit applied to DashPass subscription monthly"
+          "description": "Monthly DoorDash credits for restaurant and non-restaurant orders",
+          "terms": "Up to $25 monthly: $5 for restaurant orders and two $10 promos for groceries/retail orders through 12/31/27"
         },
         {
-          "id": "csr-lyft-pink",
-          "name": "Lyft Pink Credit",
+          "id": "csr-dashpass-benefit",
+          "name": "DashPass Membership",
           "amount": 120.0,
           "currency": "USD",
-          "category": "Transportation",
+          "category": "Dining",
           "frequency": "Annual",
-          "description": "Annual Lyft Pink membership credit",
-          "terms": "Credit for Lyft Pink membership"
+          "description": "Complimentary DashPass membership",
+          "terms": "12 months complimentary DashPass ($120 value) when activated by 12/31/27"
         },
         {
-          "id": "csr-peloton",
-          "name": "Peloton Credit",
-          "amount": 60.0,
+          "id": "csr-lyft-credit",
+          "name": "Lyft Monthly Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly Lyft in-app credits",
+          "terms": "Up to $10 monthly in-app credits for Lyft rides through 9/30/27"
+        },
+        {
+          "id": "csr-peloton-credit",
+          "name": "Peloton Membership Credit",
+          "amount": 10.0,
           "currency": "USD",
           "category": "Wellness",
-          "frequency": "Annual",
-          "description": "Annual Peloton Digital membership credit",
-          "terms": "Credit for Peloton Digital subscription"
+          "frequency": "Monthly",
+          "description": "Monthly Peloton membership credits",
+          "terms": "Up to $10 monthly toward Peloton memberships through 12/31/27"
+        },
+        {
+          "id": "csr-global-entry",
+          "name": "Global Entry/TSA PreCheck Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 Years",
+          "description": "Application fee credit for Global Entry, TSA PreCheck, or NEXUS",
+          "terms": "Statement credit up to $120 every four years for application fees"
         }
       ]
     },
     {
       "id": "chase-united-explorer",
-      "cardType": "Chase United Explorer Card",
+      "cardType": "United Explorer Card",
       "issuer": "Chase",
-      "network": "Visa",
+      "network": "visa",
       "variant": "Personal",
-      "category": "Travel Rewards",
-      "annualFee": 95,
+      "category": "Airline Rewards",
+      "annualFee": 150,
+      "color": "#002244",
       "credits": [
         {
-          "id": "united-explorer-baggage",
-          "name": "Free Checked Bag",
-          "amount": 35.0,
+          "id": "united-explorer-instacart",
+          "name": "Instacart Credit",
+          "amount": 10.0,
           "currency": "USD",
-          "category": "Travel",
-          "frequency": "Annual",
-          "description": "Free first checked bag for primary cardmember and companion",
-          "terms": "Valid on United-operated flights"
+          "category": "Shopping",
+          "frequency": "Monthly",
+          "description": "Monthly Instacart purchase credits",
+          "terms": "Up to $10 monthly for purchases made directly through Instacart. Benefits end 12/31/27."
         },
         {
-          "id": "united-explorer-credit",
-          "name": "United Travel Credit",
+          "id": "united-explorer-united-hotels",
+          "name": "United Hotels Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Semi-Annual",
+          "description": "Credits for prepaid United Hotels bookings",
+          "terms": "Up to $50 for 1st and 2nd prepaid hotel stays through United Hotels each anniversary year"
+        },
+        {
+          "id": "united-explorer-rideshare",
+          "name": "Rideshare Credit",
+          "amount": 5.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly rideshare purchase credits",
+          "terms": "Up to $5 monthly on rideshare purchases. Yearly opt-in required."
+        },
+        {
+          "id": "united-explorer-jsx",
+          "name": "JSX Flight Credit",
           "amount": 100.0,
           "currency": "USD",
           "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual United travel credit",
-          "terms": "Credit for United purchases"
+          "description": "Statement credit for JSX semi-private flights",
+          "terms": "Up to $100 annually when booking flights directly with JSX"
+        },
+        {
+          "id": "united-explorer-avis-budget",
+          "name": "Avis/Budget Car Rental Credit",
+          "amount": 25.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Semi-Annual",
+          "description": "United TravelBank cash for car rentals",
+          "terms": "Up to $25 for 1st and 2nd Avis or Budget rental through cars.united.com each anniversary year"
+        },
+        {
+          "id": "united-explorer-global-entry",
+          "name": "Global Entry/TSA PreCheck Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 Years",
+          "description": "Application fee credit for Global Entry, TSA PreCheck, or NEXUS",
+          "terms": "Statement credit up to $120 every four years for application fees"
         }
       ]
     },
     {
-      "id": "chase-united-club-infinite",
-      "cardType": "Chase United Club Infinite Card",
+      "id": "chase-united-quest",
+      "cardType": "United Quest Card",
       "issuer": "Chase",
-      "network": "Visa",
+      "network": "visa",
+      "variant": "Personal",
+      "category": "Airline Rewards",
+      "annualFee": 350,
+      "color": "#002244",
+      "credits": [
+        {
+          "id": "united-quest-travel-credit",
+          "name": "United Travel Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "TravelBank cash for United flight purchases",
+          "terms": "Up to $200 annually in United TravelBank cash on each account anniversary. Credits expire in 12 months."
+        },
+        {
+          "id": "united-quest-instacart",
+          "name": "Instacart Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Shopping",
+          "frequency": "Monthly",
+          "description": "Monthly Instacart purchase credits",
+          "terms": "Up to $10 monthly for purchases made directly through Instacart. Benefits end 12/31/27."
+        },
+        {
+          "id": "united-quest-rideshare",
+          "name": "Rideshare Credit",
+          "amount": 5.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly rideshare purchase credits",
+          "terms": "Up to $5 monthly on rideshare purchases. Yearly opt-in required."
+        },
+        {
+          "id": "united-quest-global-entry",
+          "name": "Global Entry/TSA PreCheck Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 Years",
+          "description": "Application fee credit for Global Entry, TSA PreCheck, or NEXUS",
+          "terms": "Statement credit up to $120 every four years for application fees"
+        }
+      ]
+    },
+    {
+      "id": "chase-united-gateway",
+      "cardType": "United Gateway Card",
+      "issuer": "Chase",
+      "network": "visa",
+      "variant": "Personal",
+      "category": "Airline Rewards",
+      "annualFee": 0,
+      "color": "#002244",
+      "credits": [
+        {
+          "id": "united-gateway-dashpass",
+          "name": "DashPass Membership",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Annual",
+          "description": "Complimentary DashPass membership",
+          "terms": "12 months complimentary DashPass membership when enrolled by 12/31/27"
+        }
+      ]
+    },
+    {
+      "id": "chase-united-club",
+      "cardType": "United Club Card",
+      "issuer": "Chase",
+      "network": "visa",
+      "variant": "Personal",
+      "category": "Premium Airline",
+      "annualFee": 695,
+      "color": "#002244",
+      "credits": [
+        {
+          "id": "united-club-hotel-credit",
+          "name": "Renowned Hotels Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Credits for prepaid hotel stays through Renowned Hotels",
+          "terms": "Up to $200 annually on prepaid stays purchased through Renowned Hotels and Resorts for United Cardmembers"
+        },
+        {
+          "id": "united-club-instacart",
+          "name": "Instacart Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Shopping",
+          "frequency": "Monthly",
+          "description": "Monthly Instacart purchase credits",
+          "terms": "Up to $10 monthly for purchases made directly through Instacart. Benefits end 12/31/27."
+        },
+        {
+          "id": "united-club-rideshare",
+          "name": "Rideshare Credit",
+          "amount": 5.0,
+          "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Monthly",
+          "description": "Monthly rideshare purchase credits",
+          "terms": "Up to $5 monthly on rideshare purchases. Yearly opt-in required."
+        }
+      ]
+    },
+    {
+      "id": "chase-united-business",
+      "cardType": "United Business Card",
+      "issuer": "Chase",
+      "network": "visa",
+      "variant": "Business",
+      "category": "Business Airline",
+      "annualFee": 150,
+      "color": "#002244",
+      "credits": [
+        {
+          "id": "united-business-travel-credit",
+          "name": "United Travel Credit",
+          "amount": 125.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "TravelBank cash after making qualifying United flight purchases",
+          "terms": "Up to $125 annually after making 5 United flight purchases of $100+ each calendar year"
+        },
+        {
+          "id": "united-business-dashpass",
+          "name": "DashPass Membership",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Dining",
+          "frequency": "Annual",
+          "description": "Complimentary DashPass membership",
+          "terms": "12 months complimentary DashPass membership when enrolled by 12/31/27"
+        }
+      ]
+    },
+    {
+      "id": "chase-united-club-business",
+      "cardType": "United Club Business Card",
+      "issuer": "Chase",
+      "network": "visa",
+      "variant": "Business",
+      "category": "Premium Business Airline",
+      "annualFee": 695,
+      "color": "#002244",
+      "credits": [
+        {
+          "id": "united-club-biz-hotel-credit",
+          "name": "Renowned Hotels Credit",
+          "amount": 200.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Credits for prepaid hotel stays through Renowned Hotels",
+          "terms": "Up to $200 annually on prepaid stays purchased through Renowned Hotels and Resorts for United Cardmembers"
+        },
+        {
+          "id": "united-club-biz-farelock",
+          "name": "United FareLock Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Credits for United FareLock purchases",
+          "terms": "Up to $50 annually for United FareLock purchases"
+        }
+      ]
+    },
+    {
+      "id": "citi-strata-elite",
+      "cardType": "Citi Strata Elite",
+      "issuer": "Citi",
+      "network": "mastercard",
       "variant": "Personal",
       "category": "Premium Travel",
-      "annualFee": 525,
+      "annualFee": 595,
+      "color": "#003366",
       "credits": [
         {
-          "id": "united-infinite-credit",
-          "name": "United Travel Credit",
-          "amount": 325.0,
-          "currency": "USD",
-          "category": "Travel",
-          "frequency": "Annual",
-          "description": "Annual United travel credit",
-          "terms": "Credit for United purchases"
-        },
-        {
-          "id": "united-infinite-global-entry",
-          "name": "Global Entry Credit",
-          "amount": 100.0,
-          "currency": "USD",
-          "category": "Travel",
-          "frequency": "Annual",
-          "description": "Global Entry/TSA PreCheck credit",
-          "terms": "Credit for Global Entry or TSA PreCheck application fee"
-        }
-      ]
-    },
-    {
-      "id": "citi-double-cash",
-      "cardType": "Citi Double Cash",
-      "issuer": "Citi",
-      "network": "Mastercard",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "capital-one-venture-x",
-      "cardType": "Capital One Venture X",
-      "issuer": "Capital One",
-      "network": "Visa",
-      "variant": "Personal",
-      "category": "Travel Rewards",
-      "annualFee": 395,
-      "credits": [
-        {
-          "id": "venture-x-travel-credit",
-          "name": "Annual Travel Credit",
+          "id": "citi-strata-hotel-credit",
+          "name": "Annual Hotel Benefit",
           "amount": 300.0,
           "currency": "USD",
           "category": "Travel",
           "frequency": "Annual",
-          "description": "Annual travel credit for booking through Capital One Travel",
-          "terms": "Credit for bookings through Capital One Travel portal"
+          "description": "Credit for hotel stays of 2+ nights booked through Citi Travel",
+          "terms": "Up to $300 annually for hotel stays of two nights or more booked through cititravel.com. Applied instantly at booking."
         },
         {
-          "id": "venture-x-global-entry",
-          "name": "Global Entry Credit",
-          "amount": 100.0,
+          "id": "citi-strata-splurge-credit",
+          "name": "Splurge Credit",
+          "amount": 200.0,
           "currency": "USD",
-          "category": "Travel",
+          "category": "Lifestyle",
           "frequency": "Annual",
-          "description": "Global Entry/TSA PreCheck credit",
-          "terms": "Credit for Global Entry or TSA PreCheck application fee every 4 years"
-        }
-      ]
-    },
-    {
-      "id": "capital-one-savor",
-      "cardType": "Capital One Savor Cash Rewards",
-      "issuer": "Capital One",
-      "network": "Mastercard",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 95,
-      "credits": []
-    },
-    {
-      "id": "chase-freedom-unlimited",
-      "cardType": "Chase Freedom Unlimited",
-      "issuer": "Chase",
-      "network": "Visa",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "chase-freedom-flex",
-      "cardType": "Chase Freedom Flex",
-      "issuer": "Chase",
-      "network": "Mastercard",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "citi-premier",
-      "cardType": "Citi Premier Card",
-      "issuer": "Citi",
-      "network": "Mastercard",
-      "variant": "Personal",
-      "category": "Travel Rewards",
-      "annualFee": 95,
-      "credits": [
+          "description": "Statement credits on choice of up to 2 brands",
+          "terms": "Up to $200 annually on choice of up to 2 brands: 1stDibs, American Airlines, Best Buy, Future Personal Training, Live Nation. Can change merchants as often as desired."
+        },
         {
-          "id": "citi-premier-hotel",
-          "name": "Hotel Credit",
+          "id": "citi-strata-blacklane-credit",
+          "name": "Blacklane Credit",
           "amount": 100.0,
           "currency": "USD",
+          "category": "Transportation",
+          "frequency": "Semi-Annual",
+          "description": "Credits for Blacklane premium chauffeur service",
+          "terms": "Up to $100 per six-month period ($200 annually) for Blacklane global chauffeur service bookings"
+        },
+        {
+          "id": "citi-strata-global-entry",
+          "name": "Global Entry/TSA PreCheck Credit",
+          "amount": 120.0,
+          "currency": "USD",
           "category": "Travel",
-          "frequency": "Annual",
-          "description": "Annual hotel credit for eligible bookings",
-          "terms": "Credit for hotel stays booked through Citi Travel"
+          "frequency": "Every 4 Years",
+          "description": "Application fee credit for Global Entry or TSA PreCheck",
+          "terms": "Statement credit up to $120 every four years for Global Entry or TSA PreCheck application fees"
         }
       ]
-    },
-    {
-      "id": "discover-it-cash-back",
-      "cardType": "Discover it Cash Back",
-      "issuer": "Discover",
-      "network": "Discover",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "wells-fargo-active-cash",
-      "cardType": "Wells Fargo Active Cash Card",
-      "issuer": "Wells Fargo",
-      "network": "Visa",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "bank-of-america-travel-rewards",
-      "cardType": "Bank of America Travel Rewards",
-      "issuer": "Bank of America",
-      "network": "Visa",
-      "variant": "Personal",
-      "category": "Travel Rewards",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "amex-blue-cash-preferred",
-      "cardType": "American Express Blue Cash Preferred",
-      "issuer": "American Express",
-      "network": "Amex",
-      "variant": "Personal",
-      "category": "Cash Back",
-      "annualFee": 95,
-      "credits": []
     },
     {
       "id": "amex-blue-cash-everyday",
-      "cardType": "American Express Blue Cash Everyday",
+      "cardType": "Blue Cash Everyday Card from American Express",
       "issuer": "American Express",
       "network": "Amex",
       "variant": "Personal",
       "category": "Cash Back",
       "annualFee": 0,
-      "credits": []
+      "color": "#006FCF",
+      "credits": [
+        {
+          "id": "bce-disney-streaming-credit",
+          "name": "Disney Streaming Credit",
+          "amount": 7.0,
+          "currency": "USD",
+          "category": "Entertainment",
+          "frequency": "Monthly",
+          "description": "Credits for Disney+, Hulu, or ESPN+ subscriptions",
+          "terms": "Up to $7 monthly (up to subscription amount) for Disney+, Hulu, or ESPN+ subscriptions. No minimum spend requirement. Enrollment required."
+        }
+      ]
     },
     {
-      "id": "chase-ink-business-preferred",
-      "cardType": "Chase Ink Business Preferred",
-      "issuer": "Chase",
-      "network": "Visa",
-      "variant": "Business",
-      "category": "Business Rewards",
+      "id": "amex-blue-cash-preferred",
+      "cardType": "Blue Cash Preferred Card from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "variant": "Personal",
+      "category": "Cash Back",
       "annualFee": 95,
-      "credits": []
+      "color": "#006FCF",
+      "credits": [
+        {
+          "id": "bcp-disney-streaming-credit",
+          "name": "Disney Streaming Credit",
+          "amount": 10.0,
+          "currency": "USD",
+          "category": "Entertainment",
+          "frequency": "Monthly",
+          "description": "Enhanced credits for Disney+, Hulu, or ESPN+ subscriptions",
+          "terms": "Up to $10 monthly ($120 annually) for Disney+, Hulu, or ESPN+ subscriptions. No minimum spend requirement. Enrollment required. Updated August 1, 2025."
+        }
+      ]
     },
     {
-      "id": "chase-ink-business-cash",
-      "cardType": "Chase Ink Business Cash",
-      "issuer": "Chase",
-      "network": "Visa",
-      "variant": "Business",
-      "category": "Business Rewards",
-      "annualFee": 0,
-      "credits": []
-    },
-    {
-      "id": "capital-one-spark-cash",
-      "cardType": "Capital One Spark Cash for Business",
+      "id": "capital-one-venture-x-personal",
+      "cardType": "Capital One Venture X Rewards Credit Card",
       "issuer": "Capital One",
-      "network": "Visa",
+      "network": "visa",
+      "variant": "Personal",
+      "category": "Premium Travel",
+      "annualFee": 395,
+      "color": "#004879",
+      "credits": [
+        {
+          "id": "venture-x-travel-credit",
+          "name": "Capital One Travel Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual credit for bookings through Capital One Travel",
+          "terms": "Credit available within Capital One Travel portal and applied at checkout. Expires on next account anniversary."
+        },
+        {
+          "id": "venture-x-anniversary-bonus",
+          "name": "Anniversary Bonus Miles",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Other",
+          "frequency": "Annual",
+          "description": "10,000 bonus miles each year starting with first anniversary",
+          "terms": "Worth $100 based on 1 cent per mile redemption value. Applied after anniversary."
+        },
+        {
+          "id": "venture-x-tsa-global-entry",
+          "name": "TSA PreCheck/Global Entry Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 Years",
+          "description": "Statement credit for TSA PreCheck or Global Entry application",
+          "terms": "Up to $120 statement credit once every 4 years. Credit appears within 1-2 billing cycles."
+        },
+        {
+          "id": "venture-x-premier-hotel-credit",
+          "name": "Premier Collection Hotel Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Per Stay",
+          "description": "Experience credit for Premier Collection hotel bookings",
+          "terms": "Must book through Capital One Travel. Includes daily breakfast for two and premium benefits."
+        },
+        {
+          "id": "venture-x-lifestyle-hotel-credit",
+          "name": "Lifestyle Collection Hotel Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Per Stay",
+          "description": "Experience credit for Lifestyle Collection hotel bookings",
+          "terms": "Must book through Capital One Travel. Includes premium benefits when available."
+        }
+      ]
+    },
+    {
+      "id": "capital-one-venture-x-business",
+      "cardType": "Capital One Venture X Business",
+      "issuer": "Capital One",
+      "network": "visa",
       "variant": "Business",
-      "category": "Business Rewards",
-      "annualFee": 0,
-      "credits": []
+      "category": "Premium Business Travel",
+      "annualFee": 395,
+      "color": "#004879",
+      "credits": [
+        {
+          "id": "venture-x-biz-travel-credit",
+          "name": "Capital One Travel Credit",
+          "amount": 300.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Annual",
+          "description": "Annual credit for bookings through Capital One Travel",
+          "terms": "Credit available within Capital One Travel portal and applied at checkout. Expires on next account anniversary."
+        },
+        {
+          "id": "venture-x-biz-anniversary-bonus",
+          "name": "Anniversary Bonus Miles",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Other",
+          "frequency": "Annual",
+          "description": "10,000 bonus miles each year starting with first anniversary",
+          "terms": "Worth $100 based on 1 cent per mile redemption value. Applied after anniversary."
+        },
+        {
+          "id": "venture-x-biz-tsa-global-entry",
+          "name": "TSA PreCheck/Global Entry Credit",
+          "amount": 120.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Every 4 Years",
+          "description": "Statement credit for TSA PreCheck or Global Entry application",
+          "terms": "Up to $120 statement credit once every 4 years. Credit appears within 1-2 billing cycles."
+        },
+        {
+          "id": "venture-x-biz-premier-hotel-credit",
+          "name": "Premier Collection Hotel Credit",
+          "amount": 100.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Per Stay",
+          "description": "Experience credit for Premier Collection hotel bookings",
+          "terms": "Must book through Capital One Travel. Includes daily breakfast for two and premium benefits."
+        },
+        {
+          "id": "venture-x-biz-lifestyle-hotel-credit",
+          "name": "Lifestyle Collection Hotel Credit",
+          "amount": 50.0,
+          "currency": "USD",
+          "category": "Travel",
+          "frequency": "Per Stay",
+          "description": "Experience credit for Lifestyle Collection hotel bookings",
+          "terms": "Must book through Capital One Travel. Includes premium benefits when available."
+        }
+      ]
     }
   ]
 }

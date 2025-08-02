@@ -201,7 +201,7 @@ class DataImportService: ObservableObject {
     private func processImportedCards(_ importCards: [UserCardExport], conflictResolution: ConflictResolution) -> ImportResult {
         var processedCards: [Card] = []
         let duplicatesSkipped = 0
-        var conflictsResolved = 0
+        let conflictsResolved = 0
         var warnings: [String] = []
         
         for importCard in importCards {

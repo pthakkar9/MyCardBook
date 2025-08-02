@@ -12,7 +12,7 @@ struct CreditsView: View {
     @Binding var cardFilter: CardSpecificFilter?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
                 // Search Bar
                 SearchBar(text: $searchText, placeholder: "Search credits...")

@@ -8,7 +8,7 @@ struct SettingsView: View {
     @State private var showingAboutSheet = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section(header: Text("Storage")) {
                     HStack {
@@ -266,7 +266,7 @@ struct ExportDataView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 24) {
                 VStack(spacing: 16) {
                     Image(systemName: "square.and.arrow.up")
@@ -430,7 +430,7 @@ struct ImportDataView: View {
     @State private var importError: String?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 24) {
                 VStack(spacing: 16) {
                     Image(systemName: "square.and.arrow.down")
@@ -629,7 +629,7 @@ struct AboutView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     VStack(spacing: 16) {

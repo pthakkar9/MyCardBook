@@ -10,8 +10,8 @@ The main database file containing all supported credit cards and their benefits.
 **Structure:**
 ```json
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-01-19",
+  "version": "1.2.0",
+  "lastUpdated": "2025-08-01",
   "cards": [
     {
       "id": "unique-card-identifier",
@@ -40,14 +40,35 @@ The main database file containing all supported credit cards and their benefits.
 
 ## Supported Cards
 
-Currently supported cards (as of v1.0.0):
+Currently supported cards (as of v1.2.0):
 
-- **American Express Personal Gold Card** - 2 credits (Dining, Uber)
-- **American Express Business Gold Card** - 2 credits (Dining, Wireless)  
-- **Chase Sapphire Preferred** - 1 credit (Travel)
-- **Chase Sapphire Reserve** - 2 credits (Travel, DashPass)
-- **Citi Double Cash** - 0 credits
-- **Capital One Venture X** - 0 credits
+### American Express (6 cards)
+- **Personal Gold Card** (5 credits) - Dining, Uber, Resy, Dunkin', Hotel Collection
+- **Personal Platinum Card** (9 credits) - Airline, Hotel, Uber, CLEAR, Saks, Entertainment, Equinox, Walmart+, TSA PreCheck
+- **Business Gold Card** (3 credits) - Flexible Business, Walmart+, Hotel Collection
+- **Business Platinum Card** (8 credits) - Airline, Dell, Indeed, CLEAR, Hilton, Wireless, TSA PreCheck
+- **Blue Cash Everyday** (1 credit) - Disney Streaming
+- **Blue Cash Preferred** (1 credit) - Disney Streaming
+
+### Chase (9 cards)
+- **Sapphire Preferred** (2 credits) - Hotel Credit, DashPass
+- **Sapphire Reserve** (9 credits) - Edit Hotels, Travel Credit, Apple Services, StubHub, DoorDash, DashPass, Lyft, Peloton, Global Entry
+- **Sapphire Reserve for Business** (8 credits) - Edit Hotels, Travel Credit, ZipRecruiter, Google Workspace, DoorDash, DashPass, Lyft, Gift Cards
+- **United Explorer** (6 credits) - Instacart, United Hotels, Rideshare, JSX, Avis/Budget, Global Entry
+- **United Quest** (4 credits) - Travel Credit, Instacart, Rideshare, Global Entry
+- **United Gateway** (1 credit) - DashPass
+- **United Club** (3 credits) - Renowned Hotels, Instacart, Rideshare
+- **United Business** (2 credits) - Travel Credit, DashPass
+- **United Club Business** (2 credits) - Renowned Hotels, FareLock
+
+### Capital One (2 cards)
+- **Venture X Personal** (5 credits) - Travel Credit, Anniversary Bonus, TSA PreCheck, Premier Hotels, Lifestyle Hotels
+- **Venture X Business** (5 credits) - Travel Credit, Anniversary Bonus, TSA PreCheck, Premier Hotels, Lifestyle Hotels
+
+### Citi (1 card)
+- **Strata Elite** (4 credits) - Hotel Benefit, Splurge Credit, Blacklane, Global Entry
+
+**Total: 22 cards with 80+ credit benefits**
 
 ## Community Contributions
 
@@ -66,13 +87,19 @@ This database is designed to be community-driven and open source. Future version
 - **Transportation** - Uber, Lyft, and other transport credits
 - **Entertainment** - Streaming, media, and entertainment credits
 - **Shopping** - Retail and shopping credits
-- **Other** - Miscellaneous credits (wireless, etc.)
+- **Wellness** - Health and wellness related credits
+- **Business** - Business-specific credits and services
+- **Technology** - Technology and software credits
+- **Other** - Miscellaneous credits
 
 ## Credit Frequencies
 
 - **Monthly** - Renews every month
 - **Quarterly** - Renews every 3 months
+- **Semi-Annual** - Renews every 6 months
 - **Annual** - Renews once per year
+- **Every 4 Years** - Renews every 4 years (TSA PreCheck/Global Entry)
+- **Per Stay** - Applied per hotel stay
 
 ## Data Privacy
 

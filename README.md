@@ -18,8 +18,8 @@
 - **Open Source** - Fully transparent and auditable
 
 ### 💳 Comprehensive Card Database
-- **23+ Popular Cards** - American Express, Chase, Citi, Capital One, and more
-- **40+ Real Benefits** - Dining credits, travel allowances, streaming credits
+- **22 Popular Cards** - American Express, Chase, Citi, Capital One, and more
+- **80+ Real Benefits** - Dining credits, travel allowances, streaming credits, and more
 - **Always Updated** - Community-driven database with regular updates
 
 ### 📊 Smart Tracking
@@ -53,31 +53,30 @@
 ## 💳 Supported Cards
 
 ### American Express
-- Personal Gold Card (3 credits)
-- Personal Platinum Card (6 credits)  
-- Business Gold Card (2 credits)
-- Business Platinum Card (4 credits)
+- **Personal Gold Card** (5 credits) - Dining, Uber, Resy, Dunkin', Hotel Collection
+- **Personal Platinum Card** (9 credits) - Airline, Hotel, Uber, CLEAR, Saks, Entertainment, Equinox, Walmart+, TSA PreCheck
+- **Business Gold Card** (3 credits) - Flexible Business, Walmart+, Hotel Collection
+- **Business Platinum Card** (8 credits) - Airline, Dell, Indeed, CLEAR, Hilton, Wireless, TSA PreCheck
+- **Blue Cash Everyday** (1 credit) - Disney Streaming
+- **Blue Cash Preferred** (1 credit) - Disney Streaming
 
 ### Chase
-- Sapphire Preferred (2 credits)
-- Sapphire Reserve (4 credits)
-- United Explorer (2 credits)
-- United Club Infinite (2 credits)
-- Freedom Unlimited & Flex
-- Ink Business Cards
+- **Sapphire Preferred** (2 credits) - Hotel Credit, DashPass
+- **Sapphire Reserve** (9 credits) - Edit Hotels, Travel Credit, Apple Services, StubHub, DoorDash, DashPass, Lyft, Peloton, Global Entry
+- **Sapphire Reserve for Business** (8 credits) - Edit Hotels, Travel Credit, ZipRecruiter, Google Workspace, DoorDash, DashPass, Lyft, Gift Cards
+- **United Explorer** (6 credits) - Instacart, United Hotels, Rideshare, JSX, Avis/Budget, Global Entry
+- **United Quest** (4 credits) - Travel Credit, Instacart, Rideshare, Global Entry
+- **United Gateway** (1 credit) - DashPass
+- **United Club** (3 credits) - Renowned Hotels, Instacart, Rideshare
+- **United Business** (2 credits) - Travel Credit, DashPass
+- **United Club Business** (2 credits) - Renowned Hotels, FareLock
 
 ### Capital One
-- Venture X (2 credits)
-- Savor Cash Rewards
+- **Venture X Personal** (5 credits) - Travel Credit, Anniversary Bonus, TSA PreCheck, Premier Hotels, Lifestyle Hotels
+- **Venture X Business** (5 credits) - Travel Credit, Anniversary Bonus, TSA PreCheck, Premier Hotels, Lifestyle Hotels
 
 ### Citi
-- Premier Card (1 credit)
-- Double Cash
-
-### Others
-- Discover it Cash Back
-- Wells Fargo Active Cash
-- Bank of America Travel Rewards
+- **Strata Elite** (4 credits) - Hotel Benefit, Splurge Credit, Blacklane, Global Entry
 
 *Don't see your card? [Request it here](https://github.com/pthakkar9/MyCardBook/issues)!*
 
@@ -162,7 +161,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Current Version (1.0)
 - ✅ Core benefit tracking
-- ✅ 23+ supported cards
+- ✅ 22 supported cards
 - ✅ Export/import functionality
 - ✅ Privacy-first design
 
@@ -174,8 +173,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Stats
 
-- **Cards Supported**: 23+
-- **Credits Tracked**: 40+
+- **Cards Supported**: 22
+- **Credits Tracked**: 80+
 - **Code Coverage**: 85%+
 - **App Size**: <10MB
 

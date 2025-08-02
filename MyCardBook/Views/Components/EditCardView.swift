@@ -17,7 +17,7 @@ struct EditCardView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Card Details")) {
                     TextField("Nickname", text: $nickname)

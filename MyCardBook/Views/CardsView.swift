@@ -11,7 +11,7 @@ struct CardsView: View {
     @Binding var cardFilter: CardSpecificFilter?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
                 // Search Bar
                 SearchBar(text: $searchText, placeholder: "Search cards...")
@@ -172,7 +172,7 @@ struct AddCardView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Card Details")) {
                     TextField("Nickname (e.g., \(placeholderSuggestions[placeholderIndex]))", text: $nickname)

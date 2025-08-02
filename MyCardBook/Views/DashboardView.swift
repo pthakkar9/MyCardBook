@@ -6,7 +6,7 @@ struct DashboardView: View {
     @Binding var creditsFilter: CreditFilter?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     // Summary Cards with Navigation
