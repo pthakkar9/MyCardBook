@@ -1,12 +1,40 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# ========================================
+# MyCardBook iOS App - .gitignore
+# ========================================
 
-## User settings
+# macOS System Files
+# ==================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Xcode & iOS Development
+# =======================
+
+## Build generated
+build/
+DerivedData/
+*.app/
+*.ipa
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
+*.linkmap
 
 ## App packaging
 *.ipa
@@ -17,46 +45,113 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+## Xcode Patch
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
 
+## Legacy Support
+*.mov
+*.mp4
+*.avi
+
+# Dependency Managers
+# ===================
+
+## Swift Package Manager
 .build/
+.swiftpm/
+.netrc
 
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
+## CocoaPods
+# Uncomment the next line to avoid checking in source code from CocoaPods dependencies.
 # Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+Podfile.lock
+*.xcworkspace
 
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
+## Carthage
+# Uncomment the next line to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
-
 Carthage/Build/
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
+# Development Tools
+# =================
 
+## fastlane
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+*.mobileprovision
+*.p12
+
+## AppCode
+.idea/
+
+## VSCode
+.vscode/
+
+## Vim
+*.swp
+*.swo
+*~
+
+## Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Testing & Coverage
+# ==================
+*.gcov
+*.gcda
+*.gcno
+coverage.xml
+*.coverage
+.coverage
+htmlcov/
+
+# Documentation
+# =============
+docs/_build/
+
+# Logs & Temporary Files
+# ======================
+*.log
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# Environment & Configuration
+# ===========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archives & Compressed Files
+# ===========================
+*.zip
+*.tar.gz
+*.rar
+
+# Backup Files
+# ============
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# Project Specific
+# ================
+# Add any project-specific files here
