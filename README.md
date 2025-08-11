@@ -2,6 +2,7 @@
 
 **Privacy-first iOS app for tracking credit card benefits**
 
+
 [![App Store](https://img.shields.io/badge/App%20Store-Download-blue)](https://apps.apple.com/app/mycardbook-pro/id6748933843)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/platform-iOS%2016.0+-lightgrey)](https://developer.apple.com/ios/)
