@@ -45,6 +45,7 @@ struct CreditsView: View {
                 
                 if filteredCredits.isEmpty {
                     EmptyCreditsView()
+                        .accessibilityIdentifier("emptyCreditsView")
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 12) {
@@ -59,6 +60,7 @@ struct CreditsView: View {
                         }
                         .padding(16)
                     }
+                    .accessibilityIdentifier("creditsScrollView")
                 }
             }
             .navigationTitle(cardFilter != nil ? "\(cardFilter!.cardNickname) Credits" : "Credits")

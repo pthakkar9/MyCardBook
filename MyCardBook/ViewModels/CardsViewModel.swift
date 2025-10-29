@@ -31,17 +31,20 @@ class CardsViewModel: ObservableObject {
     // MARK: - Private Properties
     
     private let cardRepository: CardRepository
+    private let creditRepository: CreditRepository
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
     
     /**
-     * Initializes the ViewModel with a card repository
+     * Initializes the ViewModel with repositories
      * 
      * - Parameter cardRepository: The repository for card data operations
+     * - Parameter creditRepository: The repository for credit data operations
      */
-    init(cardRepository: CardRepository = CardRepository()) {
+    init(cardRepository: CardRepository = CardRepository(), creditRepository: CreditRepository = CreditRepository()) {
         self.cardRepository = cardRepository
+        self.creditRepository = creditRepository
         
         setupBindings()
         setupSearchAndFilter()
@@ -143,9 +146,21 @@ class CardsViewModel: ObservableObject {
     
     
     /**
-     * Refreshes the cards from the repository
+     * Refreshes the cards from the repository and processes automatic credit renewals
      */
     func refresh() async {
+        // First, process automatic credit renewals
+        await creditRepository.processAutomaticRenewals()
+
+        // Then refresh the cards (which will include updated credits)
+        cardRepository.loadCards()
+    }
+
+    /**
+     * Reloads cards from repository WITHOUT processing renewals
+     * Use this when you just need to refresh the UI after a direct update
+     */
+    func reloadCards() {
         cardRepository.loadCards()
     }
     

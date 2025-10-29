@@ -32,6 +32,22 @@ struct CreditItemView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     
+                    // Show manual reset indicator for non-auto-reset credits
+                    if isManualResetCredit(credit.frequency) {
+                        Text("•")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        
+                        HStack(spacing: 2) {
+                            Image(systemName: "hand.tap")
+                                .font(.caption2)
+                                .foregroundColor(.orange)
+                            Text("Manual")
+                                .font(.caption2)
+                                .foregroundColor(.orange)
+                        }
+                    }
+                    
                     // Show card association if provided and not already filtering by card
                     if let cardNickname = cardNickname {
                         Text("•")
@@ -49,6 +65,14 @@ struct CreditItemView: View {
                     Text("Expires in \(daysUntilExpiration(credit.expirationDate)) days")
                         .font(.caption)
                         .foregroundColor(.orange)
+                }
+                
+                // Show manual reset explanation for manual-reset credits
+                if isManualResetCredit(credit.frequency) {
+                    Text("This credit stays used until you manually reset it")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .italic()
                 }
             }
             
@@ -101,6 +125,12 @@ struct CreditItemView: View {
         let days = calendar.dateComponents([.day], from: Date(), to: date).day ?? 0
         return max(0, days)
     }
+    
+    /// Determines if a credit requires manual reset (not auto-reset)
+    private func isManualResetCredit(_ frequency: String) -> Bool {
+        let normalizedFrequency = frequency.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        return normalizedFrequency.contains("every 4 years") || normalizedFrequency.contains("per stay")
+    }
 }
 
 struct CreditItemView_Previews: PreviewProvider {
@@ -127,6 +157,18 @@ struct CreditItemView_Previews: PreviewProvider {
                     usedAt: Date()
                 ),
                 cardNickname: nil,
+                onToggle: {}
+            )
+            
+            CreditItemView(
+                credit: Credit(
+                    name: "Global Entry Credit",
+                    amount: 100.0,
+                    category: "Travel",
+                    frequency: "Every 4 Years",
+                    isUsed: false
+                ),
+                cardNickname: "Amex Platinum",
                 onToggle: {}
             )
         }

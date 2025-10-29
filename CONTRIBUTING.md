@@ -197,21 +197,208 @@ open MyCardBook.xcodeproj
 
 ## 📊 Testing
 
-### Running Tests
-```bash
-# In Xcode
-⌘ + U (Run all tests)
+### Quick Reference
 
-# Or specific test suites
-- MyCardBookTests (Unit tests)
-- MyCardBookUITests (UI tests)
+```bash
+# Run all tests (fastest in Xcode)
+⌘ + U
+
+# Run credit renewal tests from command line
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  -only-testing:MyCardBookTests/CreditRenewalTests \
+  -parallel-testing-enabled NO
+
+# Run all tests with clean output
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  2>&1 | grep -E "(✔|✘|passed|failed)"
+
+# List available simulators
+xcrun simctl list devices available
 ```
 
+### Running Tests
+
+#### In Xcode (Recommended)
+```bash
+# Run all tests
+⌘ + U
+
+# Run specific test suite
+1. Click test diamond (◇) next to test class/method
+2. Or use Test Navigator (⌘ + 6) → Right-click → Run
+
+# View test results
+⌘ + 9 (Report Navigator) → Latest test run
+```
+
+#### From Command Line
+```bash
+# Run all tests
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max'
+
+# Run specific test suite (e.g., Credit Renewal Tests)
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  -only-testing:MyCardBookTests/CreditRenewalTests
+
+# Run without parallel testing (more reliable for debugging)
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  -parallel-testing-enabled NO
+
+# Get clean output
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  2>&1 | grep -E "(✔|✘|passed|failed)"
+```
+
+#### Available Test Simulators
+Choose any iPhone simulator from your Xcode installation:
+- iPhone 17 Pro Max (recommended for testing latest iOS)
+- iPhone 16 Pro
+- iPhone 15 Pro
+- iPhone 14 Pro
+- Or any other available simulator
+
+To list all available simulators:
+```bash
+xcrun simctl list devices available
+```
+
+### Test Suites
+
+#### MyCardBookTests (Unit Tests)
+Located in `MyCardBookTests/`
+
+**CreditRenewalTests** - 15 comprehensive tests for credit renewal logic:
+- ✅ Monthly credit should renew on calendar boundaries
+- ✅ Quarterly credit should renew at quarter boundaries
+- ✅ Semi-annual credit should renew at half-year boundaries
+- ✅ Annual credit should renew on January 1st
+- ✅ Manual credits (Per Stay, Every 4 Years) do not auto-renew
+- ✅ Unused credits SHOULD renew when crossing period boundaries
+- ✅ Credits do not renew within the same period
+- ✅ Usage tracking works correctly
+- ✅ Semi-annual credit NOT used till Dec 31, shows correctly on Jan 1
+- ✅ Semi-annual credit USED on Dec 31, renews correctly on Jan 1
+- ✅ Monthly credit unused in January, renews correctly on Feb 1
+- ✅ Quarterly credit used in Q4, renews correctly in Q1
+- ✅ Annual credit unused in 2024, renews correctly in 2025
+- ✅ Credit marked as used stays used until next period
+- ✅ Newly created credit does not immediately renew
+
+Run with:
+```bash
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  -only-testing:MyCardBookTests/CreditRenewalTests \
+  -parallel-testing-enabled NO
+```
+
+**Other Unit Tests**:
+- CreditRepositoryIntegrationTests - Repository layer integration tests
+
+#### MyCardBookUITests (UI Tests)
+Located in `MyCardBookUITests/`
+
+**CreditRenewalUITests** - End-to-end UI testing for credit renewal flows
+
 ### Test Requirements
-- Unit tests for new business logic
-- UI tests for new user flows
-- Performance tests for data operations
-- Security tests for sensitive features
+- **New Features**: Must include unit tests for business logic
+- **Bug Fixes**: Add regression test to prevent reoccurrence
+- **UI Changes**: Update or add UI tests for user flows
+- **Performance**: Test data operations stay under 1 second
+- **Coverage**: Maintain 80%+ overall code coverage
+
+### Writing Good Tests
+
+#### Test Structure (Swift Testing Framework)
+```swift
+import Testing
+@testable import MyCardBook
+
+struct MyFeatureTests {
+    @Test("Description of what this tests")
+    func testSpecificBehavior() async throws {
+        // Arrange - Set up test data
+        let testData = createTestData()
+
+        // Act - Perform the operation
+        let result = performOperation(testData)
+
+        // Assert - Verify expected behavior
+        #expect(result == expectedValue)
+    }
+}
+```
+
+#### Best Practices
+- ✅ **Descriptive Names**: Use clear test method names
+- ✅ **One Assertion Focus**: Each test should verify one behavior
+- ✅ **Isolated Tests**: Tests should not depend on each other
+- ✅ **Clean Test Data**: Use test fixtures or in-memory persistence
+- ✅ **Fast Execution**: Keep tests under 1 second each
+- ✅ **Deterministic**: Tests should always produce same result
+
+#### Example Test Pattern
+```swift
+@Test("Monthly credit renews at month boundary")
+func testMonthlyRenewal() async throws {
+    // Use shared test persistence controller
+    let context = Self.testPersistenceController.viewContext
+    let credit = CreditEntity(context: context)
+
+    // Set up test data with period start date
+    credit.frequency = "Monthly"
+    credit.renewalDate = Calendar.current.date(
+        from: DateComponents(year: 2024, month: 1, day: 1)
+    )
+    credit.isUsed = true
+
+    try context.save()
+
+    // Test renewal logic
+    let shouldRenew = credit.shouldRenew()
+    #expect(shouldRenew == true)
+
+    // Verify credit resets
+    credit.renew()
+    #expect(credit.isUsed == false)
+}
+```
+
+### Continuous Testing
+
+#### Before Committing
+```bash
+# Always run relevant tests before committing
+xcodebuild test -scheme MyCardBook \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' \
+  -only-testing:MyCardBookTests
+```
+
+#### Regular Test Runs
+- Run full test suite daily during active development
+- Run specific test suites when working on related features
+- Check test results before submitting pull requests
+- Monitor for flaky tests and fix them immediately
+
+### Debugging Test Failures
+
+#### Common Issues
+1. **Timing Issues**: Use `#expect(abs(date1.timeIntervalSince(date2)) < 1.0)` instead of `==`
+2. **Core Data Context**: Use shared persistence controller for tests
+3. **Parallel Test Conflicts**: Disable with `-parallel-testing-enabled NO`
+4. **Date Dependencies**: Use dynamic date calculations, not hard-coded dates
+
+#### Debugging in Xcode
+1. Set breakpoint in test method
+2. Click test diamond with ⌥ (Option) to debug
+3. Step through code to find issue
+4. Check variables in Debug Area (⌘ + Shift + Y)
 
 ## 📞 Getting Help
 

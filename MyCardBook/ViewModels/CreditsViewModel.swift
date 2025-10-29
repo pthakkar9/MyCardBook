@@ -67,13 +67,15 @@ class CreditsViewModel: ObservableObject {
     }
     
     func toggleCredit(_ credit: Credit) {
-        // Find the card containing this credit and update it
-        for (cardIndex, card) in cardsViewModel.cards.enumerated() {
-            if let creditIndex = card.credits.firstIndex(where: { $0.id == credit.id }) {
-                cardsViewModel.cards[cardIndex].credits[creditIndex].isUsed.toggle()
-                cardsViewModel.cards[cardIndex].credits[creditIndex].usedAt = cardsViewModel.cards[cardIndex].credits[creditIndex].isUsed ? Date() : nil
-                break
-            }
+        // IMPORTANT: Must persist to Core Data, not just update in-memory array!
+        // Otherwise changes are lost when cards are reloaded (e.g., when adding a new card)
+        Task {
+            // Use the credit repository to toggle and persist the change
+            let creditRepository = CreditRepository()
+            await creditRepository.toggleCreditUsage(credit)
+
+            // Reload cards WITHOUT processing renewals (we're just toggling usage)
+            cardsViewModel.reloadCards()
         }
     }
     

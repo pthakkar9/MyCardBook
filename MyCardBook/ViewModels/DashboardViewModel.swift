@@ -60,8 +60,6 @@ class DashboardViewModel: ObservableObject {
             expiringCreditsCount: expiringCount,
             utilizationPercentage: utilizationPercentage
         )
-        
-        print("Dashboard calculated: \(cards.count) cards, \(allCredits.count) credits, $\(totalAvailableValue) available")
     }
     
     private func updateExpiringCredits() {

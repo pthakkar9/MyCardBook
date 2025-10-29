@@ -63,7 +63,7 @@ class CardDatabaseService: ObservableObject {
                 amount: dbCredit.amount,
                 currency: dbCredit.currency,
                 category: dbCredit.category,
-                frequency: dbCredit.frequency,
+                frequency: normalizeFrequency(dbCredit.frequency),
                 renewalDate: calculateRenewalDate(frequency: dbCredit.frequency),
                 expirationDate: calculateExpirationDate(frequency: dbCredit.frequency),
                 isUsed: false,
@@ -107,6 +107,7 @@ class CardDatabaseService: ObservableObject {
         }
         
         guard let fileURL = url else {
+            #if DEBUG
             print("❌ CardDatabaseService: Could not find cards.json in bundle")
             print("📁 Bundle contents: \(Bundle.main.bundleURL)")
             if let resourcePath = Bundle.main.resourcePath {
@@ -118,6 +119,7 @@ class CardDatabaseService: ObservableObject {
                     print("❌ Could not list contents: \(error)")
                 }
             }
+            #endif
             return
         }
         
@@ -125,44 +127,83 @@ class CardDatabaseService: ObservableObject {
             let data = try Data(contentsOf: fileURL)
             let decoder = JSONDecoder()
             database = try decoder.decode(CardDatabase.self, from: data)
+            #if DEBUG
             print("✅ CardDatabaseService: Successfully loaded \(database?.cards.count ?? 0) cards from database")
+            #endif
         } catch {
+            #if DEBUG
             print("❌ CardDatabaseService: Failed to load cards database: \(error)")
+            #endif
         }
     }
     
     private func calculateRenewalDate(frequency: String) -> Date {
         let calendar = Calendar.current
         let now = Date()
-        
-        switch frequency.lowercased() {
-        case "monthly":
-            return calendar.date(byAdding: .month, value: 1, to: now) ?? now
-        case "quarterly":
-            return calendar.date(byAdding: .month, value: 3, to: now) ?? now
-        case "annual", "yearly":
-            return calendar.date(byAdding: .year, value: 1, to: now) ?? now
+        let key = normalizeFrequency(frequency)
+
+        // Align to calendar period starts
+        // IMPORTANT: Must normalize dates with explicit day=1 and time=00:00:00.000
+        // to match the normalization done in CreditEntity.periodStart()
+        var components = calendar.dateComponents([.year, .month, .day], from: now)
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+        components.nanosecond = 0
+
+        switch key {
+        case "Monthly":
+            components.day = 1
+            return calendar.date(from: components) ?? now
+        case "Quarterly":
+            let month = components.month ?? 1
+            let startMonth = 1 + ((month - 1) / 3) * 3
+            components.month = startMonth
+            components.day = 1
+            return calendar.date(from: components) ?? now
+        case "Semi-annual":
+            let month = components.month ?? 1
+            components.month = month <= 6 ? 1 : 7
+            components.day = 1
+            return calendar.date(from: components) ?? now
+        case "Annual":
+            components.month = 1
+            components.day = 1
+            return calendar.date(from: components) ?? now
         default:
-            return calendar.date(byAdding: .month, value: 1, to: now) ?? now
+            return now
         }
     }
     
     private func calculateExpirationDate(frequency: String) -> Date {
         let calendar = Calendar.current
-        let renewalDate = calculateRenewalDate(frequency: frequency)
-        
-        switch frequency.lowercased() {
-        case "monthly":
-            // Monthly credits typically expire at the end of the month
-            return calendar.date(byAdding: .day, value: -1, to: renewalDate) ?? renewalDate
-        case "quarterly":
-            // Quarterly credits expire at the end of the quarter
-            return calendar.date(byAdding: .day, value: -1, to: renewalDate) ?? renewalDate
-        case "annual", "yearly":
-            // Annual credits expire at the end of the year
-            return calendar.date(byAdding: .day, value: -1, to: renewalDate) ?? renewalDate
+        let start = calculateRenewalDate(frequency: frequency)
+        let key = normalizeFrequency(frequency)
+        let nextStart: Date
+        switch key {
+        case "Monthly":
+            nextStart = calendar.date(byAdding: .month, value: 1, to: start) ?? start
+        case "Quarterly":
+            nextStart = calendar.date(byAdding: .month, value: 3, to: start) ?? start
+        case "Semi-annual":
+            nextStart = calendar.date(byAdding: .month, value: 6, to: start) ?? start
+        case "Annual":
+            nextStart = calendar.date(byAdding: .year, value: 1, to: start) ?? start
         default:
-            return renewalDate
+            return start
         }
+        return calendar.date(byAdding: .second, value: -1, to: nextStart) ?? start
+    }
+
+    /// Normalize incoming frequency strings to canonical presentation used by app
+    private func normalizeFrequency(_ frequency: String) -> String {
+        let raw = frequency.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        if raw.contains("monthly") { return "Monthly" }
+        if raw.contains("quarter") { return "Quarterly" }
+        if raw.contains("semi-annual") || raw.contains("semiannual") || raw.contains("semi annual") { return "Semi-annual" }
+        if raw.contains("annual") || raw == "yearly" { return "Annual" }
+        if raw.contains("every 4 years") { return "Every 4 Years" }
+        if raw.contains("per stay") { return "Per Stay" }
+        return frequency
     }
 }

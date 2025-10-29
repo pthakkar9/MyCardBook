@@ -137,7 +137,7 @@ extension CreditEntity {
         isUsed = true
         usedAt = Date()
     }
-    
+
     /**
      * Marks the credit as unused
      */
@@ -145,7 +145,7 @@ extension CreditEntity {
         isUsed = false
         usedAt = nil
     }
-    
+
     /**
      * Toggles the usage state of the credit
      */
@@ -158,50 +158,111 @@ extension CreditEntity {
     }
     
     /**
-     * Checks if the credit should be renewed based on frequency
+     * Checks if the credit should be renewed based on calendar boundaries.
+     * Monthly, Quarterly, Semi-annual, Annual renew at the start of the next calendar period,
+     * independent of whether the credit was used in the previous period.
+     *
+     * Credits are renewed when we cross into a new calendar period to ensure:
+     * - Credit dates always reflect the current period
+     * - Unused credits don't appear expired when a new period begins
+     * - All credits reset to available at the start of each period
      */
     func shouldRenew() -> Bool {
         guard let renewalDate = renewalDate else { return false }
+        guard let frequencyKey = normalizedFrequency() else { return false }
+
         let now = Date()
-        
-        switch frequency?.lowercased() {
-        case "monthly":
-            return Calendar.current.dateComponents([.month], from: renewalDate, to: now).month ?? 0 >= 1
-        case "quarterly":
-            return Calendar.current.dateComponents([.month], from: renewalDate, to: now).month ?? 0 >= 3
-        case "annual":
-            return Calendar.current.dateComponents([.year], from: renewalDate, to: now).year ?? 0 >= 1
-        default:
-            return false
-        }
+        let storedPeriodStart = periodStart(for: renewalDate, frequencyKey: frequencyKey)
+        let currentPeriodStart = periodStart(for: now, frequencyKey: frequencyKey)
+
+        // Renew if we're in a different period
+        // Note: Newly created credits have renewalDate = current period start,
+        // so storedPeriodStart == currentPeriodStart and won't trigger renewal
+        return storedPeriodStart != currentPeriodStart
     }
     
     /**
-     * Renews the credit by resetting usage and updating dates
+     * Renews the credit by resetting usage and aligning dates to the current calendar period.
      */
     func renew() {
         guard shouldRenew() else { return }
-        
+        guard let frequencyKey = normalizedFrequency() else { return }
+
         // Reset usage
         isUsed = false
         usedAt = nil
-        
-        // Update dates based on frequency
+
+        let now = Date()
+        // Align to calendar period boundaries
+        let start = periodStart(for: now, frequencyKey: frequencyKey)
+        let end = periodEnd(forPeriodStartingAt: start, frequencyKey: frequencyKey)
+        renewalDate = start
+        expirationDate = end
+    }
+
+    // MARK: - Calendar Period Helpers
+    
+    /// Returns a normalized frequency key understood by our logic
+    /// ("monthly", "quarterly", "semiannual", "annual"). Returns nil for unsupported.
+    private func normalizedFrequency() -> String? {
+        guard let raw = frequency?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
+        if raw.contains("monthly") { return "monthly" }
+        if raw.contains("quarter") { return "quarterly" }
+        if raw.contains("semi-annual") || raw.contains("semiannual") || raw.contains("semi annual") { return "semiannual" }
+        if raw.contains("annual") || raw == "yearly" { return "annual" }
+        return nil
+    }
+    
+    /// Start of the calendar period for a given date and frequency
+    private func periodStart(for date: Date, frequencyKey: String) -> Date {
         let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day], from: date)
+        components.hour = 0; components.minute = 0; components.second = 0; components.nanosecond = 0
         
-        switch frequency?.lowercased() {
+        switch frequencyKey {
         case "monthly":
-            renewalDate = calendar.date(byAdding: .month, value: 1, to: renewalDate ?? Date())
-            expirationDate = calendar.date(byAdding: .month, value: 1, to: expirationDate ?? Date())
+            components.day = 1
+            return calendar.date(from: components) ?? date
         case "quarterly":
-            renewalDate = calendar.date(byAdding: .month, value: 3, to: renewalDate ?? Date())
-            expirationDate = calendar.date(byAdding: .month, value: 3, to: expirationDate ?? Date())
+            let month = components.month ?? 1
+            // Quarters start Jan (1), Apr (4), Jul (7), Oct (10)
+            let startMonth = 1 + ((month - 1) / 3) * 3
+            components.month = startMonth
+            components.day = 1
+            return calendar.date(from: components) ?? date
+        case "semiannual":
+            let month = components.month ?? 1
+            // Semi-annual periods: Jan-Jun (start 1), Jul-Dec (start 7)
+            components.month = month <= 6 ? 1 : 7
+            components.day = 1
+            return calendar.date(from: components) ?? date
         case "annual":
-            renewalDate = calendar.date(byAdding: .year, value: 1, to: renewalDate ?? Date())
-            expirationDate = calendar.date(byAdding: .year, value: 1, to: expirationDate ?? Date())
+            components.month = 1
+            components.day = 1
+            return calendar.date(from: components) ?? date
         default:
-            break
+            return date
         }
+    }
+    
+    /// End of the calendar period (end of day) for a period starting at start
+    private func periodEnd(forPeriodStartingAt start: Date, frequencyKey: String) -> Date {
+        let calendar = Calendar.current
+        let nextStart: Date
+        switch frequencyKey {
+        case "monthly":
+            nextStart = calendar.date(byAdding: .month, value: 1, to: start) ?? start
+        case "quarterly":
+            nextStart = calendar.date(byAdding: .month, value: 3, to: start) ?? start
+        case "semiannual":
+            nextStart = calendar.date(byAdding: .month, value: 6, to: start) ?? start
+        case "annual":
+            nextStart = calendar.date(byAdding: .year, value: 1, to: start) ?? start
+        default:
+            nextStart = start
+        }
+        // End is one second before nextStart
+        return calendar.date(byAdding: .second, value: -1, to: nextStart) ?? start
     }
     
     // MARK: - Conversion Methods

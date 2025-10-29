@@ -63,7 +63,9 @@ class CreditRepository: ObservableObject {
             let creditEntities = try context.fetch(fetchRequest)
             credits = creditEntities.map { $0.toCredit() }
         } catch {
+            #if DEBUG
             print("Failed to load credits: \(error)")
+            #endif
             credits = []
         }
     }
@@ -246,34 +248,34 @@ class CreditRepository: ObservableObject {
     
     /**
      * Processes automatic credit renewals
-     * 
+     *
      * This method checks all credits and renews those that are due for renewal
      * based on their frequency settings.
      */
     func processAutomaticRenewals() async {
         isLoading = true
         error = nil
-        
+
         do {
             let fetchRequest: NSFetchRequest<CreditEntity> = CreditEntity.fetchRequest()
             let creditEntities = try context.fetch(fetchRequest)
-            
+
             var hasChanges = false
-            
+
             for creditEntity in creditEntities {
                 if creditEntity.shouldRenew() {
                     creditEntity.renew()
                     hasChanges = true
                 }
             }
-            
+
             if hasChanges {
                 try persistenceController.save()
                 await refreshCredits()
             }
-            
+
             isLoading = false
-            
+
         } catch {
             handleError(error)
         }

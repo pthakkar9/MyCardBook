@@ -55,13 +55,18 @@
         },
         "category": {
           "type": "string",
-          "enum": ["Cash Back", "Travel Rewards", "Premium Travel", "Business Rewards", "No Annual Fee", "Other"],
+          "enum": ["Cash Back", "Travel Rewards", "Premium Travel", "Business Rewards", "No Annual Fee", "Dining & Grocery Rewards", "Premium Business Travel", "Airline Rewards", "Premium Airline", "Business Airline", "Premium Business Airline", "Other"],
           "description": "Card category"
         },
         "annualFee": {
           "type": "number",
-          "minimum": 0,
-          "description": "Annual fee in USD"
+          "minimum": 0.0,
+          "description": "Annual fee in USD (decimal format for consistency)"
+        },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "Card color in hex format (e.g., #D4AF37)"
         },
         "credits": {
           "type": "array",
@@ -88,8 +93,8 @@
         },
         "amount": {
           "type": "number",
-          "minimum": 0,
-          "description": "Credit amount"
+          "minimum": 0.0,
+          "description": "Credit amount in USD (decimal format for consistency)"
         },
         "currency": {
           "type": "string",
@@ -99,12 +104,12 @@
         },
         "category": {
           "type": "string",
-          "enum": ["Dining", "Travel", "Transportation", "Entertainment", "Shopping", "Wellness", "Other"],
+          "enum": ["Dining", "Travel", "Transportation", "Entertainment", "Shopping", "Wellness", "Business", "Technology", "Lifestyle", "Other"],
           "description": "Credit category"
         },
         "frequency": {
           "type": "string",
-          "enum": ["Monthly", "Quarterly", "Annual"],
+          "enum": ["Monthly", "Quarterly", "Semi-annual", "Annual", "Every 4 Years", "Per Stay"],
           "description": "Credit renewal frequency"
         },
         "description": {

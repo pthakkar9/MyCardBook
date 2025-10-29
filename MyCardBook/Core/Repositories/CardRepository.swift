@@ -102,28 +102,28 @@ class CardRepository: ObservableObject {
             isLoading = true
             error = nil
         }
-        
+
         do {
             let cardEntity = CardEntity(context: context)
             cardEntity.update(from: card)
-            
+
             // Add credits to the card
             for credit in card.credits {
                 let creditEntity = CreditEntity(context: context)
                 creditEntity.update(from: credit)
                 cardEntity.addToCredits(creditEntity)
             }
-            
+
             try persistenceController.save()
-            
+
             // Reload to get the updated card
             await refreshCards()
-            
+
             await MainActor.run {
                 isLoading = false
             }
             return cardEntity.toCard()
-            
+
         } catch {
             handleError(error)
             return nil

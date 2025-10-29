@@ -167,7 +167,10 @@ class PersistenceController: ObservableObject {
     @objc private func handlePersistentStoreRemoteChange(notification: Notification) {
         // Handle CloudKit remote changes
         // This will be implemented when CloudKit sync is added
-        print("Remote change notification received")
+        #if DEBUG
+        // Uncomment for debugging Core Data sync issues
+        // print("Remote change notification received")
+        #endif
     }
     
     // MARK: - Save Operations
